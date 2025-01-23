@@ -12,14 +12,14 @@
 
 #include "push_swap.h"
 
-long ft_atol(char *str)
+long	ft_atol(char *str)
 {
 	int		sign;
 	long	number;
 
 	sign = 1;
 	number = 0;
-	while(*str == 32 || *str >= 9 && *str <= 13)
+	while (*str == 32 || (*str >= 9 && *str <= 13))
 		str++;
 	if (*str == '-' || *str == '+')
 	{
@@ -35,18 +35,7 @@ long ft_atol(char *str)
 	return (number * sign);
 }
 
-void	ft_list_print(t_stack_node *stack)
-{
-
-	while (stack)
-	{
-		printf("%d", stack->nbr);
-		printf("\n");
-		stack = stack->next;
-	}
-}
-
-void ft_init_stack(t_stack_node **stack, char **argv)
+void	ft_init_stack(t_stack_node **stack, char **argv)
 {
 	long	nbr;
 	int		i;
@@ -55,14 +44,22 @@ void ft_init_stack(t_stack_node **stack, char **argv)
 	while (argv[i])
 	{
 		if (ft_error_syntax(argv[i]))
+		{
+			printf("1");
 			ft_error_free(stack);
+		}
 		nbr = ft_atol(argv[i]);
-		if (nbr > 2147483647 || nbr < -2147483648)
+		if (nbr > INT_MAX || nbr < INT_MIN)
+		{
+			printf("2");
 			ft_error_free(stack);
+		}
 		if (ft_error_repetition(*stack, (int)nbr))
+		{
+			printf("3");
 			ft_error_free(stack);
+		}
 		ft_append_node(stack, (int)nbr);
 		i++;
 	}
-	ft_list_print(*stack);
 }

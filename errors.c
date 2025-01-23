@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void ft_free_stack(t_stack_node **stack)
+void	ft_free_stack(t_stack_node **stack)
 {
 	t_stack_node	*temp;
 	t_stack_node	*current;
@@ -29,7 +29,7 @@ void ft_free_stack(t_stack_node **stack)
 	*stack = NULL;
 }
 
-int ft_error_repetition(t_stack_node *stack, int nbr)
+int	ft_error_repetition(t_stack_node *stack, int nbr)
 {
 	if (!stack)
 		return (0);
@@ -44,27 +44,26 @@ int ft_error_repetition(t_stack_node *stack, int nbr)
 
 int	ft_error_syntax(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!(str[i] == '+' || str[i] == '-' || (str[i] >= '0' && str[i] <= '9')))
 		return (1);
-	if ((str[i] == '+' || str[i] == '-') && !(str[i] >= '0' && str[i] <= '9'))
+	if ((str[i] == '+' || str[i] == '-') && !(str[1] >= '0' && str[1] <= '9'))
 		return (1);
+	i++;
 	while (str[i])
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))
-			return (1);	
+			return (1);
 		i++;
 	}
 	return (0);
 }
 
-void ft_error_free(t_stack_node **stack)
+void	ft_error_free(t_stack_node **stack)
 {
-	if (!stack)
-		return ;
 	ft_free_stack (stack);
-	write(1, "Error", 5);
+	write(2, "Error\n", 6);
 	exit(1);
 }

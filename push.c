@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ft_push(t_stack_node **src, t_stack_node **dest)
+void	ft_push(t_stack_node **dest, t_stack_node **src)
 {
 	t_stack_node	*node_to_push;
 
@@ -38,12 +38,12 @@ void	ft_push(t_stack_node **src, t_stack_node **dest)
 
 void	pa(t_stack_node **a, t_stack_node **b)
 {
-	ft_push(a,b);
+	ft_push(a, b);
 	write(1, "pa\n", 3);
 }
 
 void	pb(t_stack_node **b, t_stack_node **a)
 {
-	ft_push(b,a);
+	ft_push(b, a);
 	write(1, "pb\n", 3);
 }

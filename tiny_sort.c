@@ -12,17 +12,17 @@
 
 #include "push_swap.h"
 
-bool	ft_sorted(t_stack_node *stack)
+int	ft_sorted(t_stack_node *stack)
 {
 	if (stack == NULL)
-		return (true);
+		return (1);
 	while (stack->next)
 	{
 		if (stack->nbr > stack->next->nbr)
-			return (false);
+			return (0);
 		stack = stack->next;
 	}
-	return (true);
+	return (1);
 }
 
 t_stack_node	*ft_find_highest(t_stack_node *stack)
@@ -45,6 +45,12 @@ t_stack_node	*ft_find_highest(t_stack_node *stack)
 	return (highest_node);
 }
 
+/* when i have 3 nodes:
+	If the 1st is the biggest, ra (biggest to bottom)
+	If the 2nd is the biggest, rra (biggest to bottom)
+	Now the biggest is at the bottom 
+	If 1st is bigger than 2nd, sa
+ */
 void	ft_tiny_sort(t_stack_node **a)
 {
 	t_stack_node	*highest_node;

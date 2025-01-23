@@ -46,6 +46,26 @@ t_stack_node	*ft_last_node(t_stack_node *stack)
 	return (stack);
 }
 
+t_stack_node	*ft_find_smallest(t_stack_node *stack)
+{
+	long			smallest;
+	t_stack_node	*smallest_node;
+
+	if (!stack)
+		return (NULL);
+	smallest = LONG_MAX;
+	while (stack)
+	{
+		if (stack->nbr < smallest)
+		{
+			smallest_node = stack;
+			smallest = stack->nbr;
+		}
+		stack = stack->next;
+	}
+	return (smallest_node);
+}
+
 int	ft_stack_len(t_stack_node *stack)
 {
 	int	len;
@@ -53,10 +73,70 @@ int	ft_stack_len(t_stack_node *stack)
 	len = 0;
 	if (!stack)
 		return (0);
-	while (stack->next)
+	while (stack)
 	{
 		stack = stack->next;
 		len++;
 	}
 	return (len);
 }
+
+t_stack_node	*ft_cheapest_node(t_stack_node *stack)
+{
+	if (stack == NULL)
+		return (NULL);
+	while (stack)
+	{
+		if (stack->cheapest == true)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
+}
+
+/* void	ft_print_stacks(t_stack_node *a, t_stack_node *b)
+{
+	printf("------------------------------\n");
+	printf("------------STACK A-----------\n");
+	printf("------------------------------\n");
+	if (!a)
+		printf("STACK A IS EMPTY\n");
+	else
+	{
+		while (a)
+		{	printf("\n");
+			printf("nbr          - %d\n", a->nbr);
+			printf("index        - %d\n", a->index);
+			printf("push price   - %d\n", a->push_price);
+			printf("above median - %d\n", a->above_median);
+			printf("cheapest     - %d\n", a->cheapest);
+			if (a->target_node)
+				printf("target node  - %d\n", a->target_node->nbr);
+			else
+				printf("target node  - NULL\n");
+			a = a->next;
+		}
+	}
+	printf("\n");
+	printf("------------------------------\n");
+	printf("------------STACK B-----------\n");
+	printf("------------------------------\n");
+	if (!b)
+		printf("STACK B IS EMPTY\n");
+	else
+	{
+		while (b)
+		{	printf("\n");
+			printf("nbr          - %d\n", b->nbr);
+			printf("index        - %d\n", b->index);
+			printf("push price   - %d\n", b->push_price);
+			printf("above median - %d\n", b->above_median);
+			printf("cheapest     - %d\n", b->cheapest);
+			if (b->target_node)
+				printf("target node  - %d\n", b->target_node->nbr);
+			else
+				printf("target node  - NULL\n");
+			b = b->next;
+		}
+	}
+} */

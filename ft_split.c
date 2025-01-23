@@ -15,7 +15,7 @@
 int	ft_count_words(char *str)
 {
 	int	words;
-	int i;
+	int	i;
 
 	words = 0;
 	i = 0;
@@ -30,7 +30,8 @@ int	ft_count_words(char *str)
 	}
 	return (words);
 }
-char *ft_strncpy(char *s1, char *s2, int n)
+
+char	*ft_strncpy(char *s1, char *s2, int n)
 {
 	int	i;
 
@@ -46,9 +47,9 @@ char *ft_strncpy(char *s1, char *s2, int n)
 
 void	ft_copy(char **strings, char *str)
 {
-	int i;
-	int k;
-	int j;
+	int	i;
+	int	k;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -64,7 +65,7 @@ void	ft_copy(char **strings, char *str)
 			strings[j] = (char *)malloc(sizeof(char) * ((i - k) + 1));
 			ft_strncpy(strings[j], &str[k], i - k);
 			j++;
-		}	
+		}
 	}
 	strings[j] = NULL;
 }
@@ -72,8 +73,6 @@ void	ft_copy(char **strings, char *str)
 char	**ft_split(char *str)
 {
 	char	**strings;
-	int 	i;
-	int		k;
 
 	strings = (char **)malloc(sizeof(char *) * ft_count_words(str) + 1);
 	if (!strings)
