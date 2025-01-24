@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpedro-f <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: joaovieira <joaovieira@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 13:02:41 by jpedro-f          #+#    #+#             */
-/*   Updated: 2025/01/20 13:02:42 by jpedro-f         ###   ########.fr       */
+/*   Updated: 2025/01/24 19:05:22 by joaovieira       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,9 @@ void			ft_finish_rotation(t_stack_node **stack,
 					t_stack_node *cheapest, char name);
 void			ft_move_nodes(t_stack_node **a, t_stack_node **b);
 void			ft_push_swap(t_stack_node **a, t_stack_node **b);
+
+// push_to_b.c
+int				ft_pivot(t_stack_node *stack);
+void			ft_part_stack(t_stack_node **a, t_stack_node **b);
 
 #endif

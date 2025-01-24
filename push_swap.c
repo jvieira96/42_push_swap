@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpedro-f <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: joaovieira <joaovieira@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 14:28:11 by jpedro-f          #+#    #+#             */
-/*   Updated: 2025/01/22 14:28:12 by jpedro-f         ###   ########.fr       */
+/*   Updated: 2025/01/24 19:22:12 by joaovieira       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,16 +73,11 @@ void	ft_move_nodes(t_stack_node **a, t_stack_node **b)
 
 void	ft_push_swap(t_stack_node **a, t_stack_node **b)
 {
-	int				len_a;
 	t_stack_node	*smallest;
 
-	len_a = ft_stack_len(*a);
-	while (len_a > 3)
-	{
-		pb(b, a);
-		len_a--;
-	}
-	ft_tiny_sort(a);
+	ft_part_stack(a, b);
+	if (!ft_sorted)
+		ft_tiny_sort(a);
 	while (*b)
 	{
 		ft_init_nodes(*a, *b);
