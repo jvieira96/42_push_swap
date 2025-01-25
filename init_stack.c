@@ -44,21 +44,12 @@ void	ft_init_stack(t_stack_node **stack, char **argv)
 	while (argv[i])
 	{
 		if (ft_error_syntax(argv[i]))
-		{
-			printf("1");
 			ft_error_free(stack);
-		}
 		nbr = ft_atol(argv[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
-		{
-			printf("2");
 			ft_error_free(stack);
-		}
 		if (ft_error_repetition(*stack, (int)nbr))
-		{
-			printf("3");
 			ft_error_free(stack);
-		}
 		ft_append_node(stack, (int)nbr);
 		i++;
 	}

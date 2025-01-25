@@ -76,7 +76,7 @@ void	ft_push_swap(t_stack_node **a, t_stack_node **b)
 	t_stack_node	*smallest;
 
 	ft_part_stack(a, b);
-	if (!ft_sorted)
+	if (!ft_sorted(*a))
 		ft_tiny_sort(a);
 	while (*b)
 	{
