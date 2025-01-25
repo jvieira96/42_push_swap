@@ -63,6 +63,8 @@ void	ft_copy(char **strings, char *str)
 		if (i > k)
 		{
 			strings[j] = (char *)malloc(sizeof(char) * ((i - k) + 1));
+			if (!strings[j])
+				return ;
 			ft_strncpy(strings[j], &str[k], i - k);
 			j++;
 		}
@@ -74,7 +76,7 @@ char	**ft_split(char *str)
 {
 	char	**strings;
 
-	strings = (char **)malloc(sizeof(char *) * ft_count_words(str) + 1);
+	strings = (char **)malloc(sizeof(char *) * (ft_count_words(str) + 1));
 	if (!strings)
 		return (NULL);
 	ft_copy(strings, str);

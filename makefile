@@ -16,7 +16,20 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra -g
 MAKE_LIB = ar -rcs
 
-SRCS = $(wildcard *.c)
+SRCS =	errors.c \
+		ft_split.c \
+		init_stack.c \
+		main.c \
+		push_swap_init.c \
+		push_swap.c \
+		push_to_b.c \
+		push.c \
+		reverse_rotate.c \
+		rotate.c \
+		stack_utils.c \
+		swap.c \
+		tiny_sort.c \
+
 OBJS = $(SRCS:.c=.o)
 
 all : $(NAME)
@@ -35,7 +48,6 @@ clean :
 
 fclean : clean
 	rm -f $(NAME)
-	cd ../checker && make fclean
 
 re : fclean all
 

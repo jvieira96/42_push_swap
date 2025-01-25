@@ -25,6 +25,7 @@ int	main(int argc, char **argv)
 	{
 		argv = ft_split(argv[1]);
 		ft_init_stack(&a, argv);
+		ft_free_arg(argv);
 	}
 	else if (argc > 2)
 		ft_init_stack(&a, argv + 1);

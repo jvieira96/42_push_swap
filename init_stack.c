@@ -41,6 +41,7 @@ void	ft_init_stack(t_stack_node **stack, char **argv)
 	int		i;
 
 	i = 0;
+	nbr = 0;
 	while (argv[i])
 	{
 		if (ft_error_syntax(argv[i]))

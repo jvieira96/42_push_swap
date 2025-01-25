@@ -12,14 +12,14 @@
 
 #include "push_swap.h"
 
-int		ft_pivot(t_stack_node *stack)
+int	ft_pivot(t_stack_node *stack)
 {
 	t_stack_node	*smallest_node;
 	t_stack_node	*biggest_node;
 	int				pivot;
-	
+
 	if (stack == NULL)
-		return 0;
+		return (0);
 	smallest_node = ft_find_smallest(stack);
 	biggest_node = ft_find_highest(stack);
 	pivot = (smallest_node->nbr + biggest_node->nbr) / 2;

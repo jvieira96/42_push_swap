@@ -12,6 +12,21 @@
 
 #include "push_swap.h"
 
+void	ft_free_arg(char **arg)
+{
+	int i;
+
+	if (!arg)
+		return ;
+	i = 0;
+	while (arg[i])
+	{
+		free(arg[i]);
+		i++;
+	}
+	free(arg);
+}
+
 void	ft_free_stack(t_stack_node **stack)
 {
 	t_stack_node	*temp;

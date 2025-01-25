@@ -22,13 +22,16 @@ void	ft_append_node(t_stack_node **stack, int nbr)
 	new_node = malloc(sizeof(t_stack_node));
 	if (!new_node)
 		return ;
-	new_node->next = NULL;
 	new_node->nbr = nbr;
+	new_node->next = NULL;
+	new_node->prev = NULL;
+	new_node->index = -1;
+	new_node->above_median = false;
+	new_node->push_price = 0;
+	new_node->target_node = NULL;
+	new_node->cheapest = false;
 	if (*stack == NULL)
-	{
 		*stack = new_node;
-		new_node->prev = NULL;
-	}
 	else
 	{
 		last_node = ft_last_node(*stack);

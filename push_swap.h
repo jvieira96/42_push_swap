@@ -37,6 +37,7 @@ long			ft_atol(char *str);
 void			ft_init_stack(t_stack_node **stack, char **argv);
 
 // errors.c
+void			ft_free_arg(char **arg);
 void			ft_free_stack(t_stack_node **stack);
 int				ft_error_repetition(t_stack_node *stack, int nbr);
 int				ft_error_syntax(char *str);

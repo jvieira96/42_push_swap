@@ -110,6 +110,7 @@ void	ft_set_cheapest(t_stack_node *b)
 	t_stack_node	*cheapest_node;
 
 	cheapest = LONG_MAX;
+	cheapest_node = NULL;
 	while (b)
 	{
 		if (b->push_price < cheapest)
@@ -119,7 +120,8 @@ void	ft_set_cheapest(t_stack_node *b)
 		}
 		b = b->next;
 	}
-	cheapest_node->cheapest = true;
+	if (cheapest_node != NULL)
+		cheapest_node->cheapest = true;
 }
 
 /*
