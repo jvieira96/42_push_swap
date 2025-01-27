@@ -21,7 +21,7 @@ int	ft_check_char(char *str)
 	{
 		if (!(str[i] >= '0' && str[i] <= '9') && !(str[i] == 32)
 			&& !(str[i] >= 9 && str[i] <= 13) && str[i])
-				return (-1);
+			return (-1);
 		i++;
 	}
 	return (0);

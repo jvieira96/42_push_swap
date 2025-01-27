@@ -53,10 +53,10 @@ void	ft_init_stack(t_stack_node **stack, char **argv, int argc)
 		if (nbr > INT_MAX || nbr < INT_MIN)
 			ft_error_free(stack);
 		if (ft_error_repetition(*stack, (int)nbr))
-			{
-				ft_free_arg(argv);
-				ft_error_free(stack);
-			}
+		{
+			ft_free_arg(argv);
+			ft_error_free(stack);
+		}
 		ft_append_node(stack, (int)nbr);
 		i++;
 	}
