@@ -57,7 +57,7 @@ void			ft_append_node(t_stack_node **stack, int nbr);
 int				ft_stack_len(t_stack_node *stack);
 t_stack_node	*ft_find_smallest(t_stack_node *stack);
 t_stack_node	*ft_cheapest_node(t_stack_node *stack);
-/* void	ft_print_stacks(t_stack_node *a, t_stack_node *b); */
+/* void			ft_print_stacks(t_stack_node *a, t_stack_node *b); */
 
 /*--------------------OPERATIONS--------------------*/
 // swap.c
@@ -107,7 +107,7 @@ void			ft_move_nodes(t_stack_node **a, t_stack_node **b);
 void			ft_push_swap(t_stack_node **a, t_stack_node **b);
 
 // push_to_b.c
-int				ft_pivot(t_stack_node *stack);
+long			ft_pivot(t_stack_node *stack);
 void			ft_part_stack(t_stack_node **a, t_stack_node **b);
 
 #endif

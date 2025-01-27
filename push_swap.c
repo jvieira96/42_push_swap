@@ -85,10 +85,11 @@ void	ft_push_swap(t_stack_node **a, t_stack_node **b)
 	}
 	ft_set_index(*a);
 	smallest = ft_find_smallest(*a);
-	if (smallest->above_median)
-		while (*a != smallest)
+	while (*a != smallest)
+	{
+		if (smallest->above_median)
 			ra(a);
-	else
-		while (*a != smallest)
+		else
 			rra(a);
+	}
 }

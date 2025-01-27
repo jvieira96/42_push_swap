@@ -12,24 +12,24 @@
 
 #include "push_swap.h"
 
-int	ft_pivot(t_stack_node *stack)
+long	ft_pivot(t_stack_node *stack)
 {
 	t_stack_node	*smallest_node;
 	t_stack_node	*biggest_node;
-	int				pivot;
+	long			pivot;
 
 	if (stack == NULL)
 		return (0);
 	smallest_node = ft_find_smallest(stack);
 	biggest_node = ft_find_highest(stack);
-	pivot = (smallest_node->nbr + biggest_node->nbr) / 2;
+	pivot = ((long)smallest_node->nbr + (long)biggest_node->nbr) / 2;
 	return (pivot);
 }
 
 void	ft_part_stack(t_stack_node **a, t_stack_node **b)
 {
-	int	len;
-	int	pivot;
+	int		len;
+	long	pivot;
 
 	if (a == NULL || b == NULL)
 		return ;
@@ -40,10 +40,13 @@ void	ft_part_stack(t_stack_node **a, t_stack_node **b)
 	while (len > 3)
 	{
 		if ((*a)->nbr <= pivot)
+		{
 			pb(b, a);
+			len--;
+			pivot = ft_pivot(*a);
+		}
 		else
 			ra(a);
-		len--;
 	}
 	ft_part_stack(a, b);
 }

@@ -14,7 +14,7 @@
 
 void	ft_free_arg(char **arg)
 {
-	int i;
+	int	i;
 
 	if (!arg)
 		return ;
