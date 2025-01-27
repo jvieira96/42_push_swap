@@ -22,13 +22,12 @@ int	main(int argc, char **argv)
 	if (argc == 1 || (argc == 2 && !(argv[1][0])))
 		return (0);
 	else if (argc == 2)
-	{
 		argv = ft_split(argv[1]);
-		ft_init_stack(&a, argv);
+	if (argv == NULL)
+		ft_error_free(&a);
+	ft_init_stack(&a, argv, argc);
+	if (argc == 2)
 		ft_free_arg(argv);
-	}
-	else if (argc > 2)
-		ft_init_stack(&a, argv + 1);
 	if (!ft_sorted(a))
 	{
 		if (ft_stack_len(a) == 2)

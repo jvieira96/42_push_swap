@@ -34,7 +34,7 @@ typedef struct s_stack_node
 /*--------------------INIT STACK--------------------*/
 // init_stack.c
 long			ft_atol(char *str);
-void			ft_init_stack(t_stack_node **stack, char **argv);
+void			ft_init_stack(t_stack_node **stack, char **argv, int argc);
 
 // errors.c
 void			ft_free_arg(char **arg);

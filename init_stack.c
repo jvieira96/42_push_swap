@@ -35,12 +35,15 @@ long	ft_atol(char *str)
 	return (number * sign);
 }
 
-void	ft_init_stack(t_stack_node **stack, char **argv)
+void	ft_init_stack(t_stack_node **stack, char **argv, int argc)
 {
 	long	nbr;
 	int		i;
 
-	i = 0;
+	if (argc == 2)
+		i = 0;
+	else
+		i = 1;
 	nbr = 0;
 	while (argv[i])
 	{
@@ -50,7 +53,10 @@ void	ft_init_stack(t_stack_node **stack, char **argv)
 		if (nbr > INT_MAX || nbr < INT_MIN)
 			ft_error_free(stack);
 		if (ft_error_repetition(*stack, (int)nbr))
-			ft_error_free(stack);
+			{
+				ft_free_arg(argv);
+				ft_error_free(stack);
+			}
 		ft_append_node(stack, (int)nbr);
 		i++;
 	}
