@@ -48,5 +48,4 @@ void	ft_part_stack(t_stack_node **a, t_stack_node **b)
 		else
 			ra(a);
 	}
-	ft_part_stack(a, b);
 }

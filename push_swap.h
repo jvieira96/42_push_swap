@@ -41,7 +41,7 @@ void			ft_free_arg(char **arg);
 void			ft_free_stack(t_stack_node **stack);
 int				ft_error_repetition(t_stack_node *stack, int nbr);
 int				ft_error_syntax(char *str);
-void			ft_error_free(t_stack_node **stack);
+void			ft_error_free(t_stack_node **stack, char **argv, int argc);
 
 /*--------------------SPLIT FUNCTIONS--------------------*/
 // ft_split.c

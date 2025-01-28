@@ -48,15 +48,12 @@ void	ft_init_stack(t_stack_node **stack, char **argv, int argc)
 	while (argv[i])
 	{
 		if (ft_error_syntax(argv[i]))
-			ft_error_free(stack);
+			ft_error_free(stack, argv, argc);
 		nbr = ft_atol(argv[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
-			ft_error_free(stack);
+			ft_error_free(stack, argv, argc);
 		if (ft_error_repetition(*stack, (int)nbr))
-		{
-			ft_free_arg(argv);
-			ft_error_free(stack);
-		}
+			ft_error_free(stack, argv, argc);
 		ft_append_node(stack, (int)nbr);
 		i++;
 	}

@@ -76,9 +76,11 @@ int	ft_error_syntax(char *str)
 	return (0);
 }
 
-void	ft_error_free(t_stack_node **stack)
+void	ft_error_free(t_stack_node **stack, char **argv, int argc)
 {
 	ft_free_stack (stack);
+	if (argc == 2)
+		ft_free_arg(argv);
 	write(2, "Error\n", 6);
 	exit(1);
 }

@@ -12,21 +12,6 @@
 
 #include "push_swap.h"
 
-int	ft_check_char(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (!(str[i] >= '0' && str[i] <= '9') && !(str[i] == 32)
-			&& !(str[i] >= 9 && str[i] <= 13) && str[i])
-			return (-1);
-		i++;
-	}
-	return (0);
-}
-
 int	ft_count_words(char *str)
 {
 	int	words;
@@ -91,8 +76,6 @@ char	**ft_split(char *str)
 {
 	char	**strings;
 
-	if (ft_check_char(str) == -1)
-		return (NULL);
 	strings = (char **)malloc(sizeof(char *) * (ft_count_words(str) + 1));
 	if (!strings)
 		return (NULL);

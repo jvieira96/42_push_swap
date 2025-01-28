@@ -23,8 +23,8 @@ int	main(int argc, char **argv)
 		return (0);
 	else if (argc == 2)
 		argv = ft_split(argv[1]);
-	if (argv == NULL)
-		ft_error_free(&a);
+	// if (argv == NULL)
+	// 	ft_error_free(&a);
 	ft_init_stack(&a, argv, argc);
 	if (argc == 2)
 		ft_free_arg(argv);
