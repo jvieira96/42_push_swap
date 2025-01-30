@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpedro-f <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jpedro-f <jpedro-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 13:20:43 by jpedro-f          #+#    #+#             */
-/*   Updated: 2025/01/20 13:20:46 by jpedro-f         ###   ########.fr       */
+/*   Updated: 2025/01/30 13:54:24 by jpedro-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int	main(int argc, char **argv)
 		return (0);
 	else if (argc == 2)
 		argv = ft_split(argv[1]);
-	// if (argv == NULL)
-	// 	ft_error_free(&a);
 	ft_init_stack(&a, argv, argc);
 	if (argc == 2)
 		ft_free_arg(argv);
