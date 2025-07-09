@@ -27,3 +27,14 @@
 
 - C programming language  
 - Makefile for compilation  
+
+## Scoring Criteria (Max Moves for Full Score)
+
+| Number of Elements | Max Moves (Full Score) |
+|---------------------|------------------------|
+| 3                   | ≤ 3                    |
+| 5                   | ≤ 12                   |
+| 100                 | ≤ 700                  |
+| 500                 | ≤ 5500                 |
+
+> 💡 Staying under these thresholds ensures maximum evaluation points during peer review.
